@@ -37,10 +37,10 @@ $(document).ready(function(){
         var searchTopic=$(this).attr("data-name");  //Get the Topic Name from Attribute of the Button That Was Pressed
         var queryURL = "https://api.giphy.com/v1/gifs/search?q="+searchTopic+"&api_key=O6c62WLupbvgnteYTTNioADJEjhtLh9j&limit=10";  //Make URL for GIF's Search
 
-        //Empty Image Space DIV for Images Not to Stack 
+        //Empty Image Space DIV for Images Not to Stack
         $("#imageSpace").empty();
 
-        //Ajax Call 
+        //Ajax Call
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -64,8 +64,8 @@ $(document).ready(function(){
 
               // Appending the Paragraph Created to the "gifDiv" DIV Created Along With Image w/ Attributes Needed to Later Play and Pause GIF
               gifDiv.append(p);
-              gifDiv.append("<img src='"+results[i].images.fixed_height_still.url+"' data-still='"+results[i].images.fixed_height_still.url+"' data-animate='"+results[i].images.fixed_height.url+"' data-state='still' class='topicImg'>");
-                
+              gifDiv.append("<img src='"+results[i].images.fixed_height_still.url+"' data-still='"+results[i].images.fixed_height_still.url+"' data-animate='"+results[i].images.fixed_height.url+"' data-state='still' class='topicImg'><hr>");
+
 
               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
               $("#imageSpace").prepend(gifDiv);
@@ -84,7 +84,7 @@ $(document).ready(function(){
       if(state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
-      } 
+      }
       else{
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
@@ -92,7 +92,7 @@ $(document).ready(function(){
 
     }
 
-    //For Dynamically Created Elements 
+    //For Dynamically Created Elements
     $(document).on("click", ".topic", displayInfo);     //If Topic Button is Pressed Then Display That Topic's Search Results
     $(document).on("click", ".topicImg", changeState);  //If an Image is Clicked on Play/Pause GIF
 
