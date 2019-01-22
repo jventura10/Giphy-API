@@ -1,6 +1,6 @@
 # Giphy-API
 
-Application primarily uses Bootstrap for front-end and jQuery as well as GIPHY API to retrieve GIFs to view. 
+Application primarily uses Bootstrap for front-end and jQuery as well as GIPHY API to retrieve GIFs to view. This application makes searching for GIFs easy. To view site check https://jventura10.github.io/Giphy-API/ 
 
 - You may search for GIFs of a certain topic
 - You can pause and play GIFs
